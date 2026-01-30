@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  flex: 0 1 600px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 0 15px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background: #f8f8f8;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+/* Layout Container */
+.container {
+  display: flex; /* Sidebar na esquerda, Main-content na direita */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  height: calc(100vh - 56px);
+  padding: 12px;
+  position: sticky;
+  top: 56px;
+  background: white;
+}
+
+.nav-item {
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-item:hover {
+  background-color: #f2f2f2;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 12px 0;
+}
+
+/* Coluna de Conteúdo (Filtros + Grid) */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Um embaixo do outro */
+  background-color: #f9f9f9;
+}
+
+/* Filtros */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  padding: 12px 20px;
+  background-color: white;
+  position: sticky;
+  top: 56px; /* Gruda logo abaixo do header */
+  z-index: 90;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none; /* Esconde barra de rolagem chata */
+}
+
+.filter-item {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filter-item.active {
+  background-color: black;
+  color: white;
+}
+
+/* Grid de Vídeos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.video-card .thumbnail img {
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.video-info {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.author-img {
+  width: 36px;
+  height: 36px;
+  background-color: #ccc;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.text-info h3 {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Corta o texto em 2 linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-info p {
+  font-size: 12px;
+  color: #606060;
+}
+.author-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%; /* Faz a bolinha perfeita */
+  object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+  flex-shrink: 0; /* Impede que o texto "esmague" a imagem */
+  cursor: pointer;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 18px;
+}
